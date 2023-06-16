@@ -12,7 +12,7 @@ arrPost : Post[] = []
   }
 
 
-  createPost(newPost: Post) : void{
+  createPost(newPost: Post) : void{ //mover al formulario?
    this.arrPost.push(newPost);
   }
 

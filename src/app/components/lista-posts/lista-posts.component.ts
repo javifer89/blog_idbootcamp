@@ -1,10 +1,32 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Post } from 'src/app/interfaces/post.interface';
+import { BlogPostService } from 'src/app/services/blog-post.service';
 
 @Component({
   selector: 'app-lista-posts',
   templateUrl: './lista-posts.component.html',
-  styleUrls: ['./lista-posts.component.css']
+  styleUrls: ['./lista-posts.component.css'],
 })
 export class ListaPostsComponent {
+  blogPostService = inject(BlogPostService);
+  postOrdenados: Post[];
 
+  constructor() {
+    this.postOrdenados = [{
+
+      titulo: '',
+      texto: '',
+      autor: '',
+      imagen: '',
+      fecha: '',
+      categoria: '',
+    },
+    ];
+  }
+
+  ngOnInit() {
+    this.postOrdenados = this.blogPostService.getAll();
+  }
+
+  
 }
