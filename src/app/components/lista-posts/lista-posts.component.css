@@ -1,0 +1,16 @@
+img {
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+}
+.posts-ordenados{
+display: flex;
+justify-content: space-around;
+}
+.post{
+    border: 2px solid blue;
+    border-radius: 20px;
+    width: 300px;
+    height: auto;
+
+}

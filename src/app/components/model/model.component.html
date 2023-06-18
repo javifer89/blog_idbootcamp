@@ -1,56 +1,37 @@
-<p>model works!</p>
-<!-- {
-    titulo: string,
-    texto: string,
-    autor: string,
-    imagen: string,
-    fecha: string,
-    categoria: string,
-} -->
+
 <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
-  <div class="mb-3">
-    <label class="form-label">Nombre</label>
-    <input type="text" class="form-control" formControlName="nombre" />
 
-  </div>
   <div class="mb-3">
-    <label class="form-label">Apellidos</label>
-    <input type="text" class="form-control" formControlName="apellidos" />
+    <label class="form-label">Titulo</label>
+    <input type="text" class="form-control" formControlName="titulo" />
+  </div>
 
-  </div>
   <div class="mb-3">
-    <label class="form-label">EDAD</label>
-    <input type="number" class="form-control" formControlName="edad" />
+    <label class="form-label">Texto</label>
+    <input type="tet" class="form-control" formControlName="texto" />
   </div>
-  <div class="mb-3">
-    <label class="form-label">Email</label>
-    <input type="email" class="form-control" formControlName="email" />
 
-  </div>
   <div class="mb-3">
-    <label class="form-label">Direccion</label>
-    <input type="text" class="form-control" formControlName="direccion" />
-
+    <label class="form-label">Autor</label>
+    <input type="email" class="form-control" formControlName="autor" />
   </div>
+
   <div class="mb-3">
-    <label class="form-label">DNI</label>
-    <input type="text" class="form-control" formControlName="dni" />
-
-
+    <label class="form-label">IMAGEN</label>
+    <img [src]="" alt="">
+    <input type="text" class="form-control" formControlName="imagen" />
   </div>
+
   <div class="mb-3">
-    <label class="form-label">PASSWORD</label>
-    <input type="password" class="form-control" formControlName="password" />
+    <label class="form-label">Fecha</label>
+    <input type="text" class="form-control" formControlName="fecha" />
   </div>
-  <div class="mb-3">
-    <label class="form-label">REPITE PASSWORD</label>
-    <input
-      type="password"
-      class="form-control"
-      formControlName="repite_password"
-    />
 
+  <div class="mb-3">
+    <label class="form-label">Categoria</label>
+    <input type="text" class="form-control" formControlName="categoria" />
   </div>
+
   <input
     type="submit"
     value="Enviar"

@@ -3,7 +3,7 @@ import { Post } from 'src/app/interfaces/post.interface';
 import { BlogPostService } from 'src/app/services/blog-post.service';
 
 @Component({
-  selector: 'app-lista-posts',
+  selector: 'lista-posts',
   templateUrl: './lista-posts.component.html',
   styleUrls: ['./lista-posts.component.css'],
 })
@@ -13,7 +13,6 @@ export class ListaPostsComponent {
 
   constructor() {
     this.postOrdenados = [{
-
       titulo: '',
       texto: '',
       autor: '',
@@ -21,12 +20,15 @@ export class ListaPostsComponent {
       fecha: '',
       categoria: '',
     },
-    ];
-  }
+  ];
+}
 
-  ngOnInit() {
-    this.postOrdenados = this.blogPostService.getAll();
-  }
+ngOnInit() {
+  this.postOrdenados = this.blogPostService.getAll();
+  console.log(this.postOrdenados);
 
-  
+}
+  // onGetByCategory(): Post | undefined {
+  //   return this.postOrdenados = this.blogPostService.getByCategory2(category);
+  // }
 }
