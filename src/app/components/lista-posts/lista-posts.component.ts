@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { Post } from 'src/app/interfaces/post.interface';
 import { BlogPostService } from 'src/app/services/blog-post.service';
+import { firstValueFrom } from 'rxjs';
 
 @Component({
   selector: 'lista-posts',
@@ -27,8 +28,10 @@ ngOnInit() {
   this.postOrdenados = this.blogPostService.getAll();
   console.log(this.postOrdenados);
 }
-   onGetByCategory(): Post | undefined {
-     return this.postOrdenados = this.blogPostService.getByCategory2(category);
+    onGetByCategory(categoria: string) {
+
+      this.blogPostService.getByCategory(categoria)
+     ;
    }
 }
 

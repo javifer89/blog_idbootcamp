@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Post } from '../interfaces/post.interface';
-
+import Swal from 'sweetalert2';
 @Injectable({
   providedIn: 'root',
 })
@@ -53,7 +53,15 @@ export class BlogPostService {
 
   createPost(newPost: Post): void {
     this.arrPost.push(newPost);
-  console.log(this.arrPost) // CREAR ALERTA DE POST CREADO
+    console.log(this.arrPost)
+    // CREAR ALERTA DE POST CREADO
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Post creado!',
+      showConfirmButton: false,
+      timer: 1500,
+    });
   }
 
   getAll(): Post[] {

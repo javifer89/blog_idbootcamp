@@ -1,6 +1,5 @@
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { Post } from 'src/app/interfaces/post.interface';
 import { BlogPostService } from 'src/app/services/blog-post.service';
 
 @Component({

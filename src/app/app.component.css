@@ -1,0 +1,15 @@
+.btn {
+    background-color: lightgrey;
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s
+}
+.btn:hover{
+    background-color: bisque;
+}
+nav{
+    padding: 10px;
+    gap: 10px;
+    display: flex;
+}
