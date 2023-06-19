@@ -52,8 +52,8 @@ export class BlogPostService {
   }
 
   createPost(newPost: Post): void {
-    //mover al formulario?
     this.arrPost.push(newPost);
+  console.log(this.arrPost) // CREAR ALERTA DE POST CREADO
   }
 
   getAll(): Post[] {

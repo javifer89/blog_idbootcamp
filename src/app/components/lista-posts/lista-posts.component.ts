@@ -31,3 +31,12 @@ ngOnInit() {
   //   return this.postOrdenados = this.blogPostService.getByCategory2(category);
   // }
 }
+
+
+  // ### REVISAR
+  // async ngOnInit() {
+  //   try {
+  //     const response = await this.usersService.getAllUsers();
+  //   } catch (error) {
+  //     console.log(error);
+  //   }

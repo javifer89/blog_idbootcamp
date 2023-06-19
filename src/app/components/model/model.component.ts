@@ -22,7 +22,7 @@ export class ModelComponent {
   constructor() {
     this.formulario = new FormGroup({
       titulo: new FormControl(),
-      Text: new FormControl(),
+      texto: new FormControl(),
       autor: new FormControl(),
       imagen: new FormControl(),
       fecha: new FormControl(),
