@@ -26,7 +26,6 @@ export class ListaPostsComponent {
 ngOnInit() {
   this.postOrdenados = this.blogPostService.getAll();
   console.log(this.postOrdenados);
-
 }
   // onGetByCategory(): Post | undefined {
   //   return this.postOrdenados = this.blogPostService.getByCategory2(category);

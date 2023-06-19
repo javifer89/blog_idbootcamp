@@ -2,11 +2,10 @@ import { Injectable } from '@angular/core';
 import { Post } from '../interfaces/post.interface';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class BlogPostService {
-arrPost: Post[]
-
+  arrPost: Post[];
 
   constructor() {
     this.arrPost = [
@@ -50,37 +49,70 @@ arrPost: Post[]
         categoria: 'series',
       },
     ];
-    }
-
-
-
-  createPost(newPost: Post) : void{ //mover al formulario?
-   this.arrPost.push(newPost);
   }
 
-  getAll() :Post[] {
-  return this.arrPost;
+  createPost(newPost: Post): void {
+    //mover al formulario?
+    this.arrPost.push(newPost);
   }
 
+  getAll(): Post[] {
+    return this.arrPost;
+  }
 
-  // getByCategory(category: string): Post {
-  //   let postSeleccionado: Post;
-  //   for (let post of this.arrPost) {
-  //     if (post.categoria === category) {
-  //       postSeleccionado = post;
-  //       return postSeleccionado;
-  //     }
-  //     return this.arrPost
-  //   }
-  // }
+  getByCategory(category: string): Post | undefined {
+    return this.arrPost.find((post) => post.categoria === category);
+  }
 
-  getByCategory2(category: string): Post | undefined {
-  return this.arrPost.find(post => post.categoria === category )
+  getByCategory2(category: string): Post[] | undefined {
+    return this.arrPost.filter((post) => post.categoria === category);
+  }
+
+  onPostPublicado($event: any) {
+    this.arrPost.push($event);
+  }
+
 }
 
 
-  onPostPublicado($event: any){
-		this.arrPost.push($event);
-	}
+//LOCAL STORAGE
 
-}
+
+//   saveLocalStorage() {
+//   localStorage.setItem('post', 'Pizza prosciutto');
+// }
+
+
+// ### **Recuperar datos guardados en el navegador**
+
+// this.dato = localStorage.getItem('post');`
+
+// console.log(this.dato);`
+
+
+
+// ### **Guardar objetos el navegador**
+
+// Para guardar un objeto en LocalStorage, antes debemos convertirlo a JSON string, pare ello utilizaremos JSON.stringify() como se muestra en la siguiente instrucción:
+
+// localStorage.setItem('post', JSON.stringify(this.post));`
+
+
+// ### **Recuperar objetos guardados en el navegador**
+
+// Para recuperar un objeto almacenado en LocalStorage será necesario convertir el JSON string a un objeto, para ello utilizaremos JSON.parse() como se muestra en la siguiente instrucción:
+
+// this.datoPost = JSON.parse(localStorage.getItem('post'));`
+
+// console.log(this.datoUsuario);`
+
+
+// ### **Borrar datos guardados en el LocalStorage**
+
+// Para borrar un elemento del LocalStorage utilizaremos la siguiente instrucción:
+
+// localStorage.removeItem('post');`
+
+/// Para borrar todos los elementos del LocalStorage utilizaremos la siguiente instrucción
+
+// localStorage.clear();`
