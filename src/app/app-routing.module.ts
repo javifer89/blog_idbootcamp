@@ -4,8 +4,10 @@ import { ListaPostsComponent } from './components/lista-posts/lista-posts.compon
 import { ModelComponent } from './components/model/model.component';
 
 const routes: Routes = [
+  {path:'', component: ListaPostsComponent},
   { path: 'posts', component: ListaPostsComponent },
-  { path: 'new', component: ModelComponent}
+  { path: 'new', component: ModelComponent },
+  {path:'**', redirectTo: '/blog'}
 ];
 
 @NgModule({
