@@ -10,33 +10,38 @@ import { BlogPostService } from 'src/app/services/blog-post.service';
 export class ListaPostsComponent {
   blogPostService = inject(BlogPostService);
   postOrdenados: Post[];
+  categorias: string[] = this.blogPostService
+    .getAll()
+    .map((post) => post.categoria);
 
   constructor() {
-    this.postOrdenados = [{
-      titulo: '',
-      texto: '',
-      autor: '',
-      imagen: '',
-      fecha: '',
-      categoria: '',
-    },
-  ];
-}
+    this.postOrdenados = [
+      {
+        titulo: '',
+        texto: '',
+        autor: '',
+        imagen: '',
+        fecha: '',
+        categoria: '',
+      },
+    ];
+  }
 
-ngOnInit() {
-  this.postOrdenados = this.blogPostService.getAll();
-  console.log(this.postOrdenados);
-}
-   onGetByCategory(): Post | undefined {
-     return this.postOrdenados = this.blogPostService.getByCategory2(category);
-   }
-}
+  ngOnInit() {
+    this.getPosts();
+  }
 
+  onGetByCategory(event: any) {
+    const categoria = event.target ? event.target.value : event;
+    if (categoria) {
+      const posts = this.blogPostService.getAll();
+      this.postOrdenados = posts.filter((post) => post.categoria === categoria);
+    } else {
+      this.getPosts();
+    }
+  }
 
-  // ### REVISAR
-  // async ngOnInit() {
-  //   try {
-  //     const response = await this.usersService.getAllUsers();
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
+  getPosts() {
+    this.postOrdenados = this.blogPostService.getAll();
+  }
+}

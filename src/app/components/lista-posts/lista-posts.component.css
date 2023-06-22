@@ -3,23 +3,33 @@ img {
     height: auto;
     box-sizing: border-box;
 }
-.posts-ordenados{
-display: flex;
-justify-content: space-around;
-background-color: lightblue;
-}
-.post{
-    border: 2px solid blue;
-    border-radius: 20px;
-    width: 400px;
-    height: auto;
-    padding: 10px;
-    margin-top: 50px;
-}
-h2{
-    color:lightsalmon;
+
+h2 {
+    color: lightsalmon;
     text-align: center;
+    margin-bottom: 30px;
+    font-size: 34px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+.btn {
+    background-color: lightgrey;
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+    margin-bottom: 10px;
+}
 
-
-
+.btn:hover {
+    background-color: bisque;
+}
+.row{
+    margin-bottom: 20px;
+}
+h4 {
+    color: lightsalmon;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 28px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
