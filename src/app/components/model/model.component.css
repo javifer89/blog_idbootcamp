@@ -1,6 +1,6 @@
 form {
     background-color: lightblue;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-style: italic;
     font-size: 20px;
     align-items: center;
@@ -17,7 +17,7 @@ h2 {
     text-align: center;
     background-color: antiquewhite;
     font-size: 30px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .btn {
     background-color: lightgrey;

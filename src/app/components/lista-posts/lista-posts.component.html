@@ -1,21 +1,48 @@
-<div class="posts-ordenados mb-3 col-12 col-md-6">
-  <h2>Blog Id-bootcamp</h2>
-  <div class="post mb-3 col-12 col-md-6" *ngFor="let post of postOrdenados">
-    <h3>{{ post.titulo }}</h3>
-    <p>{{ post.texto }}</p>
-    <h5>Creado por {{ post.autor }}</h5>
-    <img [src]="post.imagen" alt="" />
-    <p>{{ post.fecha }}</p>
-    <h6>Categoria: {{ post.categoria }}</h6>
+<!-- <div class="row">
+  <div class="posts-ordenados mb-3 col-12 col-md-6">
+    <h2>Blog Id-bootcamp</h2>
+    <div class="post mb-3 col-12 col-md-6" *ngFor="let post of postOrdenados">
+      <h3>{{ post.titulo }}</h3>
+      <p>{{ post.texto }}</p>
+      <h5>Creado por {{ post.autor }}</h5>
+      <img [src]="post.imagen" alt="" />
+      <p>{{ post.fecha }}</p>
+      <h5>Categoria: {{ post.categoria }}</h5>
+    </div>
+  </div>
+</div> -->
+<div class="row d-flex justify-content-between">
+  <div
+    class="card mb-3 col-12 col-md-6"
+    style="width: 18rem"
+    *ngFor="let post of postOrdenados"
+  >
+    <div class="card-body">
+      <h5 class="card-title">{{ post.titulo }}</h5>
+      <p class="card-text">{{ post.texto }}</p>
+      <h5>Creado por {{ post.autor }}</h5>
+
+      <img [src]="post.imagen" alt="" />
+      <p>{{ post.fecha }}</p>
+      <h5>Categoria: {{ post.categoria }}</h5>
+    </div>
+  </div>
 </div>
 
-  <!-- <div class="filtrado">
-    <h4>Filtrar por categoria</h4>
-    <button class="btn btn-secondary" (click)="onGetByCategory(post.categoria)">Filtrar por categoria</button>
-    <input type="checkbox" />Viajes
-    <input type="checkbox" />Comida
-    <input type="checkbox" />Coches
-    <input type="checkbox" />Series
-  </div> -->
+<h4>FILTRAR POR CATEGORIA</h4>
+<div class="filtrado" *ngFor="let categoria of categorias">
+  <button class="btn btn-secondary" (click)="onGetByCategory(categoria)">
+    Filtrar por {{ categoria }}
+  </button>
+</div>
 
+
+<div class="row">
+  <select class="form-select" (change)="onGetByCategory($event)">
+    <option value="">Elige una categoría</option>
+    <option value="viajes">Viajes</option>
+    <option value="comida">Comida</option>
+    <option value="coches">Coches</option>
+    <option value="series">Series</option>
+  </select>
 </div>

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Post } from '../interfaces/post.interface';
 import Swal from 'sweetalert2';
+import { HttpHeaders } from '@angular/common/http'
 @Injectable({
   providedIn: 'root',
 })
@@ -53,7 +54,7 @@ export class BlogPostService {
 
   createPost(newPost: Post): void {
     this.arrPost.push(newPost);
-    console.log(this.arrPost)
+    console.log(this.arrPost);
     // CREAR ALERTA DE POST CREADO
     Swal.fire({
       position: 'top-end',
@@ -65,30 +66,41 @@ export class BlogPostService {
   }
 
   getAll(): Post[] {
-    return this.arrPost;
+    this.saveLocalStorage(this.arrPost);
+    return this.arrPost
   }
 
-  getByCategory(category: string): Post | undefined {
-    return this.arrPost.find((post) => post.categoria === category);
-  }
+  // getByCategory(categoria: string): Post | undefined {
+  //   return this.arrPost.find((post) => post.categoria === categoria)
+  // }
 
-  getByCategory2(category: string): Post[] | undefined {
-    return this.arrPost.filter((post) => post.categoria === category);
+  getByCategory(categoria: string): Post[] | undefined {
+    this.arrPost = this.arrPost.filter((post) => post.categoria === categoria)
+    return this.arrPost
   }
 
   onPostPublicado($event: any) {
-    this.arrPost.push($event);
+    this.arrPost.push($event,),this.saveLocalStorage(this.arrPost);
   }
 
-}
+
+  saveLocalStorage(data:any) {
+
+   localStorage.setItem('post',JSON.stringify(data))!
+
+    }
+  }
 
 
 //LOCAL STORAGE
 
-
-//   saveLocalStorage() {
-//   localStorage.setItem('post', 'Pizza prosciutto');
-// }
+// saveLocalStorage() {
+//     return {
+//       headers: new HttpHeaders({
+//         Authorization: localStorage.getItem('token_empleados')!,
+//       }),
+//     };
+//   }
 
 
 // ### **Recuperar datos guardados en el navegador**
