@@ -13,7 +13,3 @@ nav{
     gap: 10px;
     display: flex;
 }
-.container{
-    display:flex;
-    flex-direction: column;
-}

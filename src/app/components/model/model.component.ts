@@ -24,10 +24,6 @@ export class ModelComponent {
 
   async onSubmit() {
     const response = await this.blogPostService.createPost(this.formulario.value);
-    console.log(response);
   }
 
-  //  onCreatePost() {   // CORREGIR capturar en el servicio el OUTPUT y añadir al array el nuevo post
-  //    this.postPublicado = this.blogPostService.createPost(newPost);
-  //  }
 }

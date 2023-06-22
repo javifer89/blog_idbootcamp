@@ -2,7 +2,6 @@ import { Component, inject } from '@angular/core';
 import { Post } from 'src/app/interfaces/post.interface';
 import { BlogPostService } from 'src/app/services/blog-post.service';
 
-
 @Component({
   selector: 'lista-posts',
   templateUrl: './lista-posts.component.html',
@@ -33,7 +32,7 @@ export class ListaPostsComponent {
   }
 
   onGetByCategory(event: any) {
-    const categoria = event.target ? event.target.value : event
+    const categoria = event.target ? event.target.value : event;
     if (categoria) {
       const posts = this.blogPostService.getAll();
       this.postOrdenados = posts.filter((post) => post.categoria === categoria);
@@ -42,16 +41,7 @@ export class ListaPostsComponent {
     }
   }
 
-
   getPosts() {
     this.postOrdenados = this.blogPostService.getAll();
   }
 }
-
-// ### REVISAR
-// async ngOnInit() {
-//   try {
-//     const response = await this.usersService.getAllUsers();
-//   } catch (error) {
-//     console.log(error);
-//   }
