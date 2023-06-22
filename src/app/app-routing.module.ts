@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ListaPostsComponent } from './components/lista-posts/lista-posts.component';
-import { FormularioComponent } from './components/formulario/formulario.component';
+import { ModelComponent } from './components/model/model.component';
 
 const routes: Routes = [
+  {path:'', component: ListaPostsComponent},
   { path: 'posts', component: ListaPostsComponent },
-  { path: 'new', component: FormularioComponent}
+  { path: 'new', component: ModelComponent },
+  {path:'**', redirectTo: '/blog'}
 ];
 
 @NgModule({
